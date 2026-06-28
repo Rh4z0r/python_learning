@@ -4,26 +4,35 @@
 # 3. wenn ja, dann soll der Computer zufällig eine eine eigene Entscheidung treffen, welche anschließend gegen den Userinput geprüft wird. 
 # 4. Wenn der Input nicht verarbeitet werden kann, soll nur der Nutzer gewarnt werden.
 
-import random                                                                              # Bibliothek Random importieren
+import random                                                                               # Import der Bibliothek Random
 
-def schere_stein_papier():                                                                 # definieren der Funktion schere_stein_papier
-    optionen = ["Schere", "Stein", "Papier"]                                               # Liste mit Werten definieren
+def schere_stein_papier():                                                                  # definion der Funktion schere_stein_papier    
+    optionen = ["Schere", "Stein", "Papier"]                                                # Liste mit den Optionen erstellen
+    user_wahl = input("Wähle Schere, Stein oder Papier: ").capitalize()                     # User Input und Formatiereung (capitalize)
     
-    user_wahl = input("Wähle Schere, Stein oder Papier: ").capitalize()                    # Nutzereingabe erfragen
+    if user_wahl not in optionen:                                                           # Vergleich für ungültige Eingaben
+        print("Ungültige Eingabe!")
+        return
 
-    if user_wahl not in optionen:                                                          # Validitätsprüfung der Eingabe
-        print("Ungültige Eingabe! Bitte wähle genau: Schere, Stein oder Papier.")          # Ausgabe bei ungültigen Eingaben
-        return                                                                             # Return
+    computer_wahl = random.choice(optionen)                                                 # Auswahl des Computers
+    print(f"Der Computer hat {computer_wahl} gewählt.")                                     # Ausgabe was Computer gewählt hat
 
-    computer_wahl = random.choice(optionen)                                                # Computer wählt zufällig
-    print(f"Der Computer hat {computer_wahl} gewählt.")                                    # Ausgabe was der Computer gewählt hat
+    if user_wahl == computer_wahl:                                                          # Vergleich User/Computerwahl
+        print("Unentschieden!")
+    elif user_wahl == "Schere":
+        if computer_wahl == "Papier":
+            print("Du gewinnst!")
+        else:
+            print("Computer gewinnt!")
+    elif user_wahl == "Stein":
+        if computer_wahl == "Schere":
+            print("Du gewinnst!")
+        else:
+            print("Computer gewinnt!")
+    elif user_wahl == "Papier":
+        if computer_wahl == "Stein":
+            print("Du gewinnst!")
+        else:
+            print("Computer gewinnt!")
 
-    if user_wahl == computer_wahl:                                                         # Vergleich Computer / User
-        print("Unentschieden!")                                                            # Ergebnis-Vergleiche
-    elif (user_wahl == "Schere" and computer_wahl == "Papier") or \
-         (user_wahl == "Stein" and computer_wahl == "Schere") or \
-         (user_wahl == "Papier" and computer_wahl == "Stein"):
-        print("Du hast gewonnen!")
-    else:
-        print("Der Computer hat gewonnen!")                                                 # Computer hat gewonnen
-schere_stein_papier()                                                                       # PRogramm startenSc
+schere_stein_papier()                                                                        # Programm starten
