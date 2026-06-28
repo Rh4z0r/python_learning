@@ -4,12 +4,14 @@
 
 # Groß- und Kleinschreibung sollen ignoriert werden.
 
-import re
-from collections import Counter
+import re                                                                                                                   # Bibliothek für regulären Ausdruck importieren
+from collections import Counter                                                                                             # Modul collections importieren      
 
-def haeufigstes_wort(satz):                                                              # Alles in einem Schritt: Finden, in Lowercase umwandeln und direkt zählen
-    zaehler = Counter(re.findall(r'\w+', satz.lower()))
-       return zaehler.most_common(1)[0][0] if zaehler else "Keine Wörter gefunden!"         # most_common(1) liefert eine Liste [(wort, anzahl)], wir nehmen das erste Element des ersten Tupels
+def haeufigstes_wort(satz):                                                                                                 # Funktion haefigstes_wort definieren
+    zaehler = Counter(re.findall(r'\w+', satz.lower()))                                                                     # Mehrfache finden und in Kleinbuchstaben umwandeln 
+    return zaehler.most_common(1)[0][0] if zaehler else "Keine Wörter gefunden!"                                         # most_common(1) liefert eine Liste [(wort, anzahl)], wir nehmen das erste Element des ersten Tupels
 
-# Testlauf
-print(f"Das häufigste Wort ist: '{haeufigstes_wort('Das ist ein Test. Ein richtig guter Test ist das!')}'")
+eingabe = input("Bitte geben sie einen Satz ein und ich bestimme das Wort, dass am häufigsten vorkommt:")                 # Stringeingabe erbitten (Input)
+ergebnis = haeufigstes_wort(eingabe)                                                                                   # häufigstes Wort in Liste schreiben
+
+print(f"Das häufigste Wort ist: '{ergebnis}'")                                                                              # Ergebnis printen.
