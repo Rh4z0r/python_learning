@@ -8,12 +8,12 @@
 # Schreiben Sie ein Programm, das das Alter eines Hundes erfragt und dann nach obiger Methode
 # berechnet, welchem Alter in Menschenjahren dies entspricht.
 
-try:                                                                                                                                      # Eingabevalidierung
+try:                                                                                                                                     # Eingabevalidierung
     human = int(input("Bitte geben sie die gewünschte Anzahl an Menschenjahren ein. Ich werde sie dann in Hundejahre umrechnen: "))       # Abfrage Menschenjahre
 
     if human < 0:                                                                                                                         # Fehlermeldung bei negativer Zahl
         print("Bitte geben Sie eine gültige Zahl ein.")                                                                                   # Ausgabe der Fehlermeldung bei negativer Zahl 
-    if human == 0:                                                                                                                        # Bei Eingabe 0 
+    elif human == 0:                                                                                                                        # Bei Eingabe 0 
         print("0 Menschenjahre entsprechen 0 Hundejahren")                                                                                # Ausgabe bei Zahl 0 
     elif human == 1:                                                                                                                      # Vergleich für 1 Menschenjahr
         print("1 Jahr entspricht genau 14 Hundejahren")                                                                                   # Ausgabe für 1 Menschenjahr
