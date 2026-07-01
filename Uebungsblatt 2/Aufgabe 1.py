@@ -8,3 +8,5 @@
 ###
 ##
 #
+
+count = int(input("Bitte geben sie die Höhe des Dreiecks ein: "))           # Abfrage der Höhe des Dreiecks      
