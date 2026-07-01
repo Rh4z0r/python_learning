@@ -10,3 +10,9 @@
 #
 
 count = int(input("Bitte geben sie die Höhe des Dreiecks ein: "))           # Abfrage der Höhe des Dreiecks      
+
+for i in range(1, count + 1):                                               # Zeichenberechenung aufsteigend bis Zahl + 1
+    print("#" * i)                                                          # Ausgabe (oberer Teil bis Zahl)
+
+for i in range(count -1, 0 ,-1):                                            # Zeichenberechnung absteigend von Zahl -1 bis 0
+    print("#" * i)                                                          # Ausgabe (unterer Teil)
