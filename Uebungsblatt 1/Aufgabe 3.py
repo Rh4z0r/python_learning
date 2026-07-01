@@ -10,3 +10,17 @@
 # wird ein Schalttag eingefügt, obwohl die Jahreszahl durch Hundert teilbar ist. Nach dieser Regel
 # war das Jahr 2000 ein Schaltjahr. Schreiben Sie nun ein Python-Programm, das berechnet, ob eine
 # gegebene Jahreszahl ein Schaltjahr ist oder nicht.
+
+year = input("Bitte geben Sie ein Jahr im Format JJJJ ein und ich überprüfe, ob es ein Schaltjahr ist: ")           # Abfrage der jahreszahl
+
+try:                                                                                                                # Start der Validierungsschleife
+    year_int = int(year)                                                                                            # Definition von der Validierung als INT
+except ValueError:                                                                                                  # Verhalten bei Falsch-Eingabe    
+    print("Bitte nur Zahlen eingeben.")                                                                             # Fehlerausgabe bei Buchstaben / Sonderzeichen
+else:                                                                                                               # Verhalten bei korrekter Eingabe
+    if len(str(year_int)) != 4:                                                                                     # Prüfung auf 4 Stellen
+        print("Bitte genau vier Ziffern eingeben, z. B. 2024.")                                                     # Fehlermeldung bei >< 4 Zahlen
+    elif (year_int % 400 == 0) or (year_int % 4 == 0 and year_int % 100 != 0):                                      # Schaltjahrüberprüfung mti 3 Konditionen
+        print(year_int, "ist ein Schaltjahr.")                                                                      # Ausgabe Schaltjahr
+    else:                                                                                                           
+        print(year_int, "ist kein Schaltjahr.")                                                                     # Ausgabe kein Schaltjahr
