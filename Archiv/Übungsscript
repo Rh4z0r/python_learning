@@ -1,0 +1,8 @@
+names = ["Liam", "Olivia", "Noah", "Charlotte", "Oliver", "Emma", "Theodore", "Amelia", "Henry", "Sophia", "James", "Mia", "Elijah", "Isabella", "Mateo", "Evelyn","William", "Sofia", "Lucas", "Eliana"]
+sorted_list = []
+
+def sort_names(names):
+    return sorted(names)
+
+
+print(f"sortierte Liste: {sort_names(names)}")   
