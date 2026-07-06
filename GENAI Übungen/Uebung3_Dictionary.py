@@ -14,14 +14,25 @@
 # ==========================================
 inventar = { "Apfel": 1, "Birne": 2, "Banane": 3, "Kirsche": 4, "Melone": 1, "Traube": 15}
 
-eingabe = input("Bitte geben sie ein Obst ein: ")
-
+# 1. Funktion GANZ OBEN definieren (nur einmal)
 def inventar_update(inventar, item):
     if item in inventar:
         inventar[item] += 1
     else:    
         inventar[item] = 1
-        
-inventar_update(inventar, eingabe)
 
-print(inventar)
+# 2. Schleife starten
+while True:
+    eingabe = input("Bitte geben Sie ein Obst ein (oder 'ende' zum Abbrechen): ")
+
+    # 3. ZUERST prüfen, ob wir abbrechen wollen!
+    if eingabe.lower() == "ende":
+        print("Eingabe ist beendet.")
+        break  # WICHTIG: Das break ist jetzt eingerückt!
+
+    # 4. Wenn NICHT abgebrochen wurde, updaten wir das Inventar
+    inventar_update(inventar, eingabe)
+    print("Aktueller Stand:", inventar)
+
+# Das print ganz am Schluss, wenn die Schleife beendet ist
+print("Dein fertiges Inventar:", inventar)
