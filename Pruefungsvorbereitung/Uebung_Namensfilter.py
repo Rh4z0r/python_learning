@@ -48,7 +48,7 @@ def filter_by_popularity(list, pupularity):
     for item in list:
         popularity_of_name = name_popularity[item]
         if popularity_of_name >= popularity:
-            filteres_list.append(item)
+            filtered_list.append(item)
             
     return filtered_list
  
