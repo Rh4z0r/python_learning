@@ -14,8 +14,8 @@
 
 data = [4, 7, 11, 1, 3,  15]                                    # Werteliste
 
-j = 0                                                           # Definition von j
+j, i = 0, 0                                                           # Definition von j
 for wert in data:                                               # for Schleife
     if wert > 10:                                               # Kondition für den 10er-Übergang
         j += 1                                                  # j um eins erhöhen
-    print("Anzahl Werte größer 10: {}".format(j))               # Ausgabe
+print("Anzahl Werte größer 10: {}".format(j))               # Ausgabe
